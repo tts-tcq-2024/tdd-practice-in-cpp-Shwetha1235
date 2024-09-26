@@ -1,0 +1,20 @@
+﻿Test Name,Input,Expected Output,Description
+ExpectZeroForEmptyInput,"""""",0,Should return 0 when input is an empty string.
+ExpectZeroForSingleZero,"""0""",0,"Should return 0 when the input is ""0""."
+ExpectSumForTwoNumbers,"""1,2""",3,Should return the sum of two numbers separated by a comma.
+ExpectExceptionForNegativeNumbers,"""-1,2""",Exception,Should throw an exception when input contains negative numbers.
+ExpectExceptionForNegativeNumbers2,"""1,-2,-3""",Exception,Should throw an exception when input contains multiple negative numbers.
+ExpectExceptionForNegativeNumbers3,"""1,-2""",Exception,Should throw an exception when input contains a negative number.
+ExpectSumWithNewlineDelimiter,"""1\n2,3""",6,Should handle newlines as valid delimiters in addition to commas.
+IgnoreNumbersGreaterThan1000,"""1,1001""",1,Should ignore numbers greater than 1000.
+IgnoreNumbersGreaterThan10002,"""2,1001""",2,Should ignore numbers greater than 1000 and return the sum of valid numbers.
+ExpectSumWithCustomDelimiter,"""//;\n1;2""",3,Should support custom single-character delimiter ; and return the sum of numbers.
+ExpectSumWithCustomDelimiter2,"""//[***]\n1***2***3""",6,Should support custom multi-character delimiter *** and return the sum of numbers.
+ExpectSumWithCustomDelimiter3,"""1\n2\n3""",6,Should support newline as a valid delimiter and return the sum.
+ExpectSumWithCustomDelimiter4,"""1\n2,3""",6,Should support mixed delimiters (newline and comma) and return the sum.
+ExpectSumWithCustomDelimiter5,"""//[*][%]\n1*2%3""",6,Should support multiple custom delimiters * and % and return the sum.
+ExpectSumWithCustomDelimiter6,"""1]2[3""",6,"Test for invalid delimiters ] and [ - exact behavior unclear, assumed to return sum of numbers."
+ExpectSumWithCustomDelimiter7,"""//[***][%%%]\n1***2%%%3""",6,Should support multiple multi-character custom delimiters *** and %%% and return the sum.
+ExpectSumWithCustomDelimiter8,"""//;\n2;1001""",2,Should support custom delimiter ; and ignore numbers greater than 1000.
+ExpectSumForoneNumber1,"""1""",1,Should return the number itself if the input contains only one number.
+ExpectSumForfiveNumber1,"""1,2,3,4,5""",15,Should return the sum of five comma-separated numbers.
